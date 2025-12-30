@@ -39,13 +39,12 @@ try
     }
     
     var maks = dict.OrderByDescending(x=>x.Value).First();
-    var time = TimeSpan.FromSeconds(maks.Value);
-    Console.WriteLine($"The bike with Id:{maks.Key} traveled {(int)time.TotalHours} hours {time.Minutes} minutes and {time.Seconds} seconds");
-    //var time_in_hours = maks.Value / 3600;
-    //var minutes = (maks.Value - time_in_hours*3600) / 60;
-    //var seconds = (maks.Value - time_in_hours * 3600 - minutes * 60);
-    //Console.WriteLine($"The bike with Id:{maks.Key} traveled {time_in_hours} hours {minutes} minutes and {seconds} seconds");
-    
+
+    var time_in_hours = maks.Value / 3600;
+    var minutes = (maks.Value - time_in_hours * 3600) / 60;
+    var seconds = (maks.Value - time_in_hours * 3600 - minutes * 60);
+    Console.WriteLine($"The bike with Id:{maks.Key} traveled {time_in_hours} hours {minutes} minutes and {seconds} seconds");
+
 }
 catch (Exception e)
 {
